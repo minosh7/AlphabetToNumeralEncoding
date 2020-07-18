@@ -1,3 +1,4 @@
 ﻿  main.cpp
-c:\users\minosh\source\repos\encoding\encoding\main.cpp(15): warning C4018: '<': signed/unsigned mismatch
+c:\users\minosh\source\repos\encoding\encoding\main.cpp(20): warning C4018: '<': signed/unsigned mismatch
+c:\users\minosh\source\repos\encoding\encoding\main.cpp(43): warning C4551: function call missing argument list
   Encoding.vcxproj -> C:\Users\Minosh\source\repos\Encoding\Debug\Encoding.exe
