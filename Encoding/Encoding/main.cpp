@@ -39,6 +39,7 @@ int main()
 			cout << "Retry encoding? (Y/N):" << endl; //Try a different input
 			cout << " " << endl;
 			cin >> choice;
+			cin.ignore(numeric_limits<streamsize>::max(), '\n'); //ignore number of characters inputted during the error phase when prompting for more
 			cout << " " << endl;
 			// second loop to check whether the character was y or n
 
