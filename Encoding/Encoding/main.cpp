@@ -8,7 +8,9 @@ using namespace std;
 int main()
 {
 	char choice;
-	do
+	bool repeat = true;
+
+	while (repeat)
 	{
 		string s;
 		cout << "Input Sequence:" << endl;
@@ -19,7 +21,7 @@ int main()
 		cout << "Encoded:" << endl;
 		for (int i = 0; i < size(s); i++) //iterating through the string over here
 		{
-			if (s[i] == ' ')
+			if (s[i] == ' ') //replace every blank space in the string with another blank space. essentially, keeps blank spaces intact.
 			{
 				cout << ' ';
 			}
@@ -31,17 +33,31 @@ int main()
 				}
 			}
 		}
-		cout << " " << endl;
-		cout << "Retry encoding? (Y/N):" << endl; //Try a different input
-		cout << " " << endl;
-		cin >> choice;
-		cout << " " << endl;
+		while (true)
+		{
+			cout << " " << endl;
+			cout << "Retry encoding? (Y/N):" << endl; //Try a different input
+			cout << " " << endl;
+			cin >> choice;
+			cout << " " << endl;
+			// second loop to check whether the character was y or n
+
+			if (choice == 'y' || choice == 'Y') //keep doing this so long as the choice is yes.
+			{
+				break; // get out of the second loop, and go back to the first
+			}
+			else if (choice == 'n' || choice == 'N')
+			{
+				repeat = false; //set repeat to false
+				break; //exit out of this loop, and then since there's nothing left, it will quit the program.
+			}
+			else
+			{
+				cout << "Error. Please try again." << endl; //print this out if nothing hit y or n, and
+			}
+		}
+		
 	} 
-	while (choice == 'Y' || choice == 'y'); //keep doing this so long as the choice is yes.
-	if (choice == 'N' || choice == 'n')
-	{
-		exit;
-	}
 	
 	return 0;
 }
